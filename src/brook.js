@@ -41,10 +41,10 @@ Namespace('brook').define(function(ns){
         return new Promise(next);
     };
     /**
-     * @name bind
+     * @name join
      * @param {Promise} promise
      */
-    proto.bind = function(){
+    proto.join = function(){
         var r = this;
         for( var i = 0,l = arguments.length;i<l;i++){
             var s = arguments[i];
@@ -53,6 +53,12 @@ Namespace('brook').define(function(ns){
         }
         return r;
     };
+    /**
+     * @deprecated use 'join' method instead
+     * @name bind
+     * @param {Promise} promise
+     */
+    proto.bind = proto.join;
     /**
      * @name ready
      * @param {Promise} promise
